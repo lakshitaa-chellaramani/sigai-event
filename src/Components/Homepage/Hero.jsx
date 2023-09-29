@@ -1,29 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react'
 
 const Hero = () => {
-  const heroImageRef = useRef(null);
+    return (
+        <div className='bg-black'>
+            <section className=' overflow-hidden mx-auto max-w-screen-2xl h-screen pt-10 '>
+                <div className='grid lg:grid-cols-2 '>
+                    <div className='mt-20 lg:mt-16'>
+                        <h1 className='text-5xl header  lg:text-8xl lg:mt-20 font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-teal-400 to-blue-600 text-center uppercase'>
+                            Get ready for the battle
+                        </h1>
+                        <div className='flex  justify-center mt-10'>
+                        <button class=" animate-border inline-block rounded-xl bg-white bg-gradient-to-r from-gray-50  to-blue-500 bg-[length:400%_400%] p-1">
+                            <span class="block rounded-xl text-2xl bg-slate-900 px-12 py-4 font-bold text-white"> Get Started </span>
+                        </button>
+                    </div>
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scaleValue = 1 + scrollPosition / 1000; // Adjust the value to control the zoom effect
-      heroImageRef.current.style.transition = 'transform 0.4s ease-in-out'; // Add CSS transition for smoothness
-      heroImageRef.current.style.transform = `scale(${scaleValue})`;
-    };
 
-    window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  return (
-    <div>
-    <section className='h-screen   '>
-    <h1 ref={heroImageRef} className='text-center mt-80 mb-48 hero-image  font-bold text-transparent text-4xl lg:text-8xl bg-clip-text bg-gradient-to-r from-teal-300 to-blue-600'>ARTIFICIAL INTELLIGENCE WECLOMES YOU</h1>
-    </section>
-    </div>
-  )
+                    </div>
+                    <div className='flex justify-center items-center lg:mt-10'>
+                        <img src='AI6.png' className=' hidden lg:block' />
+                        <img src='AI8.png' className=' mt-10 w-80 block lg:hidden' />
+                    </div>
+                    
+
+                </div>
+
+            </section>
+        </div>
+    )
 }
 
 export default Hero

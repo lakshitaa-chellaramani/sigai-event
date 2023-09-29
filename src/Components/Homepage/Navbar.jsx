@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,28 +12,25 @@ const Navbar = () => {
                 className={`bg-black dark:bg-gray-900 fixed w-full z-20 top-0 left-0 dark:border-gray-600 ${isMobileMenuOpen ? 'h-auto' : ''
                     }`}
             >
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <Link to="/"><span className="self-center text-white text-2xl font-bold whitespace-nowrap dark:text-white">
-                        SIG AI LOGO
-                    </span></Link>
+                <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <span className="self-center text-white text-2xl font-bold whitespace-nowrap dark:text-white">
+                        <img src='SIGAILOGO.png' className='h-10 w-40' alt='logo' />{' '}
+                    </span>
                     <div className="flex gap-4 md:order-2">
                         <div className="hidden lg:block">
                             <div className='flex gap-4'>
-                                <button
-                                    type="button"
-                                    className="text-black  bg-white hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                >
-                                    Log in
-                                </button>
-                                <button
-                                    type="button"
-                                    className="text-white  bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                >
-                                    Sign up
-                                </button>
+                            <button
+                            type="button"
+                            className="animate-border inline-block rounded-xl bg-white bg-gradient-to-r from-gray-50  to-blue-500 bg-[length:400%_400%] p-1"
+                        >
+                        <span class="block rounded-xl text-lg bg-slate-900 px-4 py-1 font-bold text-white"> Get Started </span>
+
+                        </button>
                             </div>
 
                         </div>
+                        <h1 className='text-xl block lg:hidden text-white'>Event Name</h1>
+
                         <button
                             data-collapse-toggle="navbar-sticky"
                             type="button"
@@ -87,40 +83,7 @@ const Navbar = () => {
                             }`}
                         id="navbar-sticky"
                     >
-                        <ul className="flex text-white flex-col text-md lg:text-lg p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                            <li>
-                                <button
-                                    className="block py-2 pl-3 pr-4  rounded hover:text-blue-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                                    onClick={toggleMobileMenu}
-                                >
-                                    Personal
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    className="block py-2 pl-3 pr-4  rounded hover:text-blue-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover-bg-gray-700 dark:hover:text-white md:dark:hover-bg-transparent dark:border-gray-700"
-                                    onClick={toggleMobileMenu}
-                                >
-                                    Business
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    className="block py-2 pl-3 pr-4  rounded hover:text-blue-500 md:hover-bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover-bg-gray-700 dark:hover:text-white md:dark:hover-bg-transparent dark:border-gray-700"
-                                    onClick={toggleMobileMenu}
-                                >
-                                    Services
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    className="block py-2 pl-3 pr-4  rounded hover:text-blue-500 md:hover-bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover-bg-gray-700 dark:hover:text-white md:dark:hover-bg-transparent dark:border-gray-700"
-                                    onClick={toggleMobileMenu}
-                                >
-                                    Contact
-                                </button>
-                            </li>
-                        </ul>
+                        <h1 className='text-xl hidden lg:block text-white'>Event Name</h1>
                     </div>
                     {/* Conditional rendering of "Log in" and "Sign up" buttons */}
                     {isMobileMenuOpen && (
@@ -129,14 +92,9 @@ const Navbar = () => {
                                 type="button"
                                 className="text-black bg-white hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             >
-                                Log in
+                            Get Started
                             </button>
-                            <button
-                                type="button"
-                                className="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                            >
-                                Sign up
-                            </button>
+                        
                         </div>
                     )}
                     {/* End of conditional rendering */}
