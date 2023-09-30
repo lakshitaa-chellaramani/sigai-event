@@ -13,8 +13,8 @@ const Navbar = () => {
                     }`}
             >
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <span className="self-center text-white text-2xl font-bold whitespace-nowrap dark:text-white">
-                        <img src='SIGAILOGO.png' className='h-10 w-40' alt='logo' />{' '}
+                    <span className="self-center lg:hidden text-white text-2xl font-bold whitespace-nowrap dark:text-white">
+                        <h1>Event Name</h1>
                     </span>
                     <div className="flex gap-4 md:order-2">
                         <div className="hidden lg:block">
@@ -29,7 +29,6 @@ const Navbar = () => {
                             </div>
 
                         </div>
-                        <h1 className='text-xl block lg:hidden text-white'>Event Name</h1>
 
                         <button
                             data-collapse-toggle="navbar-sticky"
