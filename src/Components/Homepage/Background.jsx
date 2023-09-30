@@ -5,7 +5,7 @@ const Background = () => {
     <div>
     <div className="fixed inset-0 overflow-hidden z-0">
     <video
-      className="absolute inset-0 w-full h-full object-cover"
+      className="absolute opacity-70 inset-0 w-full h-full object-cover"
       autoPlay
       loop
       muted

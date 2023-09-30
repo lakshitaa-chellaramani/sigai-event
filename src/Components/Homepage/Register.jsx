@@ -10,7 +10,7 @@ const Register = () => {
        
         <div className="w-full  rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h4 className="text-md regsiterbutton text-center font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
+                <h4 className="text-xl regsiterbutton text-center font-extrabold leading-tight tracking-tight text-white md:text-4xl dark:text-white">
                     Register here
                 </h4>
                 <form className="space-y-4 md:space-y-6" action="#">
