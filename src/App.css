@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-
-.heroheading{
-  font-family: 'Press Start 2P', cursive;}
+.heroheading {
+  font-family: "Press Start 2P", cursive;
+}
 /* Register Page */
-.regsiterbutton{
-  font-family: 'Orbitron', sans-serif;
+.regsiterbutton {
+  font-family: "Orbitron", sans-serif;
 }
 /* BayWindowSlider.css */
 
@@ -92,4 +92,70 @@
   .hero-text {
     width: 100%;
   }
+}
+
+.submitbtn {
+  background: none;
+  border: 2px solid #000;
+  font-family: "Orbitron", sans-serif;
+  padding: 12px 20px;
+  min-width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+}
+.submitbtn:hover {
+  color: #fff;
+  transform: scaleX(1);
+}
+.submitbtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transition-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  transform: scaleX(0);
+}
+
+.btn{
+  border: 1px solid #3498db;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+  color: #3498db;
+}
+
+.btn:hover{
+  color: #fff;
+}
+
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #3498db;
+  z-index: -1;
+  transition: 0.8s;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+
+.btn:hover::before{
+  height: 180%;
 }
