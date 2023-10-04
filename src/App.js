@@ -10,16 +10,12 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
+        {/* <Question></Question> */}
         <Routes>
-<<<<<<< HEAD
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/ClueCards" element={<ClueCards/>} />
           <Route exact path="/register" element={<Register/>} />
-
-=======
-          <Route exact path="/" element={<Homepage/>}/>
           <Route exact path="/question" element={<Question />} />
->>>>>>> main
         </Routes>
       </BrowserRouter>
     </>
