@@ -1,8 +1,12 @@
 import React, { useState, useRef } from "react";
-
-export default function QuestionAnswer({question, markQuestionAsSubmitted, currentQuestion}) {
+import '../../App.css'
+export default function QuestionAnswer({
+  question,
+  markQuestionAsSubmitted,
+  currentQuestion,
+}) {
   const [answer, setAnswer] = useState("");
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
   const handleAnswerChange = (e) => {
     setAnswer(e.target.value);
@@ -40,51 +44,62 @@ export default function QuestionAnswer({question, markQuestionAsSubmitted, curre
   //   h1Ref.current.textContent = h1Ref.current.dataset.value || 'Your Text Here';
   // };
 
-  const submitAnswer = () =>{
-    if(answer === question.answer){
-      setScore(score+1)
+  const submitAnswer = () => {
+    if (answer === question.answer) {
+      setScore(score + 1);
     }
-    markQuestionAsSubmitted(currentQuestion)
-    setAnswer('')
-  }
+    markQuestionAsSubmitted(currentQuestion);
+    setAnswer("");
+  };
 
   return (
-      <div>
-        {/* Question Title  onMouseOver={handleMouseOver}
-          ref={h1Ref}*/}
-        <h1
-          
-          data-value={question.question}
-          className="mb-4 font-bold text-transparent text-3xl lg:text-6xl bg-clip-text bg-gradient-to-r from-teal-300 to-blue-600 text-center"
+    <div>
+      {question.pretense ? (
+        <p
+          data-value={question.pretense}
+          className="mb-4 font-orbitron font-bold text-transparent text-sm lg:text-xl bg-clip-text text-white text-center"
         >
-          {question.question}
-        </h1>
+          {question.pretense.split("<span>").map((text, index) => (
+            <span key={index} style={{ display: "block" }}>
+              {text}
+            </span>
+          ))}
+        </p>
+      ) : null}
+      <h1
+        data-value={question.questionheading}
+        className="mb-4 font-orbitron font-bold text-transparent text-3xl lg:text-6xl bg-clip-text bg-gradient-to-r from-teal-300 to-blue-600 text-center"
+      >
+        {question.questionheading}
+      </h1>
+      <p
+        data-value={question.question}
+        className="mb-4 font-bold font-orbitron text-transparent text-sm lg:text-xl bg-clip-text text-white text-center"
+      >
+        {question.question}
+      </p>
+      {question.imageURL ? (
+        <img src={question.imageURL} alt="Question" className="w-full mb-4" />
+      ) : null}
 
-        {/* Image */}
-        <img
-          src={question.imageURL} // Replace with your image URL
-          alt="Question"
-          className="w-full mb-4"
+      {/* Answer Input */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Your Answer"
+          className="w-full px-4 py-2 border border-gray-300 rounded-l-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          value={answer}
+          onChange={handleAnswerChange}
         />
-
-        {/* Answer Input */}
-        <div className="mb-4">
-          <input
-            type="text"
-            placeholder="Your Answer"
-            className="w-full px-4 py-2 border border-gray-300 rounded-l-md"
-            value={answer}
-            onChange={handleAnswerChange}
-          />
-          
-        </div>
-        <div className="flex justify-center">
-        <button className="text-black bg-white hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        onClick ={submitAnswer}>
-            Submit
-          </button>
-        </div>
       </div>
-
+      <div className="flex justify-center">
+        <button
+          className="btn"
+          onClick={submitAnswer}
+        >
+          Submit
+        </button>
+      </div>
+    </div>
   );
 }

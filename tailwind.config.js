@@ -8,6 +8,9 @@ module.exports = {
       animation: {
         border: 'border 4s ease infinite',
       },
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+      },
       keyframes: {
         border: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
